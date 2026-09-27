@@ -1,0 +1,9 @@
+-- Opsiyonel işletim işlemleri; saklama süresi kurumca kararlaştırılmadan çalıştırılmaz.
+-- Bu dosya kendiliğinden zamanlanmış silme işlemi oluşturmaz.
+-- Anonim tekrar-gönderim anahtarları kişilere bağlanmaz, ham IP tutulmaz.
+-- Kurumun onayladığı süreye göre SQL Editor / planlı görev içinde kullanılır.
+-- Örnek (kurum 90 günü onaylarsa):
+-- delete from public.anonymous_receipts where created_at < now() - interval '90 days';
+-- Fikir, geri bildirim, fotoğraf, personel ve audit log için süreler ayrı belirlenmelidir.
+-- Ham içerik imha edilecekse raporlama için gerekli anonim toplamlar önce değerlendirilir.
+-- Storage fotoğrafları SQL DELETE ile değil Storage API ile imha edilir.
